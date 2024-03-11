@@ -1,0 +1,9 @@
+accession_id_prefix: AITXXX
+author: https://orcid.org/0000-0003-3373-7386
+description: 'Cellular and molecular characterization of human cortical cytoarchitecture.
+  Dissection: Middle temporal gyrus (MTG).'
+github_org: hkir-dev
+id: CCN20240304
+matrix_file_id: CellXGene_dataset:015c230d-650c-4527-870d-8a805849a382
+repo: human-neocortex-middle-temporal-gyrus
+title: 'Dissection: Middle temporal gyrus (MTG)'

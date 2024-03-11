@@ -1,0 +1,22 @@
+# PURL configuration for https://purl.bican.org/taxonomy/CCN20240304
+
+idspace: CCN20240304
+base_url: /taxonomy/CCN20240304
+
+products:
+- CCN20240304.json: https://raw.githubusercontent.com/hkir-dev/human-neocortex-middle-temporal-gyrus/main/CCN20240304.json
+
+base_redirect: https://github.com/hkir-dev/human-neocortex-middle-temporal-gyrus
+
+entries:
+
+# https://purl.bican.org/taxonomy/CCN20240304/CCN20240304.json
+- exact: /CCN20240304.json
+  replacement: https://raw.githubusercontent.com/hkir-dev/human-neocortex-middle-temporal-gyrus/main/CCN20240304.json
+
+# https://purl.bican.org/taxonomy/CCN20240304/releases/2023-09-24/CCN20240304.json
+- prefix: /releases/
+  replacement: https://raw.githubusercontent.com/hkir-dev/human-neocortex-middle-temporal-gyrus/v
+  tests:
+    - from: /releases/2023-09-24/
+      to: https://raw.githubusercontent.com/hkir-dev/human-neocortex-middle-temporal-gyrus/v2023-09-24/
