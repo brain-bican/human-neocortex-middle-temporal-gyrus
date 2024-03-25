@@ -44,7 +44,7 @@ commands = [
   ["git", "pull"],
   ["git", "push"],
   ["gh", "release", "create", "{tag}"],
-  ["tdta", "purl-publish", "-i", "./", "-t", "CCN20240304", "-u", "'{username}'"]
+  ["tdta", "purl-publish", "-i", "./", "-t", "AIT_MTG", "-u", "'{username}'"]
 ]
 
 [actions.export]
@@ -54,13 +54,13 @@ commands = []
 [actions.sub_export_cas_save]
 label = "To CAS"
 commands = [
-  ["tdta", "export", "-db", "./build/nanobot.db", "-o", "./CCN20240304.json", "-c", "/tdt_datasets"]
+  ["tdta", "export", "-db", "./build/nanobot.db", "-o", "./AIT_MTG.json", "-c", "/tdt_datasets"]
 ]
 
 [actions.sub_export_export_anndata]
 label = "To AnnData"
 commands = [
-  ["tdta", "anndata", "-db", "./build/nanobot.db", "-j", "./CCN20240304.json", "-o", "/tdt_datasets/CCN20240304.h5ad", "-c", "/tdt_datasets"]
+  ["tdta", "anndata", "-db", "./build/nanobot.db", "-j", "./AIT_MTG.json", "-o", "/tdt_datasets/AIT_MTG.h5ad", "-c", "/tdt_datasets"]
 ]
 
 [actions.github]
@@ -155,5 +155,5 @@ commands = [
 [actions.sub_github_purl]
 label = "Publish PURL"
 commands = [
-  ["tdta", "purl-publish", "-i", "./", "-t", "CCN20240304", "-u", "'{username}'"]
+  ["tdta", "purl-publish", "-i", "./", "-t", "AIT_MTG", "-u", "'{username}'"]
 ]
