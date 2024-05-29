@@ -22,7 +22,7 @@
     comments_json_url = "http://127.0.0.1:5000/reviews?accession_id=" + $("*[name='cell_set_accession']").first()[0].value;
     $.getJSON(comments_json_url).done(function(review_data) {
       review_data.sort(function(a,b){
-        return new Date(a.time) - new Date(b.time);  // sort old to new
+        return new Date(a.datestamp) - new Date(b.datestamp);  // sort old to new
       });
       // console.log("Review data: ", review_data);
 
@@ -36,10 +36,10 @@
           review_style = "text-danger";
         } 
         editable = "visible";
-        if (result.name != user_name) {
+        if (result.reviewer != user_name) {
           editable = "hidden";
         }
-        review_date = new Date(result.time);
+        review_date = new Date(result.datestamp);
         const content = `
         <div class="card mb-3" name="review-card">
             <div class="card-body">
@@ -49,11 +49,11 @@
                 <div class="w-100">
                   <div class="d-flex justify-content-between align-items-center mb-3">
                     <h6 class="text-primary fw-bold mb-0">
-                      <div name="reviewer" style="display: inline;">${result.name}</div>
+                      <div name="reviewer" style="display: inline;">${result.reviewer}</div>
                       <span class="text-dark ms-2 fw-normal" name="review-explanation">${result.explanation}</span>
                     </h6>
                     <p class="mb-0">${review_date.toLocaleString()}</p>
-                    <p class="mb-0" name="review-time" hidden>${result.time}</p>
+                    <p class="mb-0" name="review-time" hidden>${result.datestamp}</p>
                   </div>
                   <div class="d-flex justify-content-between align-items-center">
                     <p class="small mb-0" style="color: #aaa; visibility: ${editable}">
@@ -78,10 +78,10 @@
     $('#add-comment-submit').click(function(e){
       e.preventDefault();
       modal_data = {
-        "name": $("#modal-user-name").val(),
+        "reviewer": $("#modal-user-name").val(),
         "review": $("#modal-review").val(),
         "explanation": $("#modal-explanation").val(),
-        "time": new Date().toISOString(),
+        "datestamp": new Date().toISOString(),
         "target_node_accession": $("*[name='cell_set_accession']").first()[0].value
       };
       $.ajax({
@@ -120,8 +120,8 @@
         var review_time = review_card_to_delete.find('p[name="review-time"]').first().text();
         var reviewer = review_card_to_delete.find('div[name="reviewer"]').first().text();
         var review_data = {
-          "time": review_time,
-          "name": reviewer,
+          "datestamp": review_time,
+          "reviwer": reviewer,
           "target_node_accession": $("*[name='cell_set_accession']").first()[0].value,
         };
         console.log("Review data: ", review_data);
@@ -170,10 +170,10 @@
     $('#update-comment-submit').click(function(e){
       e.preventDefault();
       modal_data = {
-        "name": $("#update-modal-user-name").val(),
+        "reviewer": $("#update-modal-user-name").val(),
         "review": $("#update-modal-review").val(),
         "explanation": $("#update-modal-explanation").val(),
-        "time": $("#update-modal-time").val(),
+        "datestamp": $("#update-modal-time").val(),
         "target_node_accession": $("*[name='cell_set_accession']").first()[0].value
       };
       $.ajax({
