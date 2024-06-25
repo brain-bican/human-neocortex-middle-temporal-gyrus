@@ -164,7 +164,7 @@
       $.getJSON(table_json_url, function (data) {
         api_results["annotations"] = data;
       }),
-      
+
       $.getJSON(labelset_json_url, function (labelset_data) {
         var labelset_ranks = [];
         for (index in labelset_data) {
@@ -181,7 +181,7 @@
     // console.log("All data: ", table_data);
     // sort highest rank first but ordered by accession_id if same rank. Then filter higher ranks only
     // table_data.sort((a, b) => (a.rank > b.rank) ? -1 : (a.rank === b.rank) ? ((a.cell_set_accession > b.cell_set_accession) ? 1 : -1) : 1 );
-    
+
     if (! is_new_row) {
       // filter higher ranks only as parents while editing
       form_data = table_data[parseInt(row_number) - 1];
