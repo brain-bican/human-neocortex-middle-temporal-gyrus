@@ -2,11 +2,14 @@
 
 Cellular and molecular characterization of human cortical cytoarchitecture. Dissection: Middle temporal gyrus (MTG).
 
+PURL: https://purl.bican.org/taxonomy/AIT_MTG
+
 Curate your taxonomy in 3 simple steps:
 
-1. [Get Taxonomy Development Tools](#get-taxonomy-development-tools)  
-1. [Load your data](#load-your-data)  
-1. [Browse](#browse)  
+- [Dissection: Middle temporal gyrus (MTG) (CCN20240304)](#dissection-middle-temporal-gyrus-mtg-ccn20240304)
+  - [Get Taxonomy Development Tools](#get-taxonomy-development-tools)
+  - [Load your data](#load-your-data)
+  - [Browse](#browse)
 
 ## Get Taxonomy Development Tools 
 
